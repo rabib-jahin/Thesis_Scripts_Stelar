@@ -5,9 +5,9 @@ timeFile="11-taxa-time.csv" # will keep the records of running time
 RFRateFile="11-RFRateFile.csv" # will keep the records of RF rates
 
 
-folders=( 11-taxon )
+folders=( 11-taxon  )
 innerFolderNames=(estimated_Xgenes_strongILS/estimated_5genes_strongILS estimated_Xgenes_strongILS/estimated_15genes_strongILS estimated_Xgenes_strongILS/estimated_25genes_strongILS estimated_Xgenes_strongILS/estimated_50genes_strongILS estimated_Xgenes_strongILS/estimated_100genes_strongILS )
-methodNames=( MP MV)
+methodNames=( MP MV )
 # Headers of the csv files
 #echo "ilslevel, genetrees, basepair, methodName, modelConditionName,Robinson-Foulds distance" > $RFRateFile
 #echo "name,time" > $timeFile
@@ -38,11 +38,11 @@ do
 
 			do
  
-			      
+			                mkdir -p ../Dataset/$folder/$gt_folder/stelar_inputs
 					file=../Dataset/$folder/$gt
 					START=$(date +%s.%N)
 					python3 utils.py $file temp.tre
-					python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_input_$method.tre 
+					python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
 					END=$(date +%s.%N)
 					DIFF=$(echo "$END - $START" | bc)
 					# cp gt.best.of.10.tre  $speciesTree
