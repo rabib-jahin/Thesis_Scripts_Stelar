@@ -1,0 +1,8 @@
+folder,inner_folder,method,average_rf
+
+15-taxon,100gene-100bp,MP,0.541667
+
+15-taxon,100gene-1000bp,MP,0.208333
+
+15-taxon,100gene-true,MP,0.000000
+

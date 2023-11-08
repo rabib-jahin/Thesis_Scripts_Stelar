@@ -5,11 +5,12 @@ timeFile="11-taxa-time.csv" # will keep the records of running time
 RFRateFile="11-RFRateFile.csv" # will keep the records of RF rates
 
 
-folders=( 37-taxon  )
-innerFolderNames1=(estimated_Xgenes_strongILS/estimated_5genes_strongILS estimated_Xgenes_strongILS/estimated_15genes_strongILS estimated_Xgenes_strongILS/estimated_25genes_strongILS estimated_Xgenes_strongILS/estimated_50genes_strongILS estimated_Xgenes_strongILS/estimated_100genes_strongILS )
-innerFolderNames2=(noscale.25g.500b noscale.50g.500b noscale.100g.500b noscale.200g.250b noscale.200g.500b noscale.200g.1000b noscale.200g.1500b noscale.200g.true noscale.400g.500b noscale.800g.500b scale2d.200g.500b scale2u.200g.500b )
-
-methodNames=( MP MV )
+folders=( 11-taxon 15-taxon 37-taxon)
+R=20
+innerFolderNames11=(estimated_Xgenes_strongILS/estimated_5genes_strongILS estimated_Xgenes_strongILS/estimated_15genes_strongILS estimated_Xgenes_strongILS/estimated_25genes_strongILS estimated_Xgenes_strongILS/estimated_50genes_strongILS estimated_Xgenes_strongILS/estimated_100genes_strongILS )
+innerFolderNames37=(noscale.25g.500b noscale.50g.500b noscale.100g.500b noscale.200g.250b noscale.200g.500b noscale.200g.1000b noscale.200g.1500b noscale.200g.true noscale.400g.500b noscale.800g.500b scale2d.200g.500b scale2u.200g.500b )
+innerFolderNames15=(100gene-100bp 100gene-1000bp 100gene-true 1000gene-100bp 1000gene-1000bp 1000gene-true)
+methodNames=(MP)
 # Headers of the csv files
 #echo "ilslevel, genetrees, basepair, methodName, modelConditionName,Robinson-Foulds distance" > $RFRateFile
 #echo "name,time" > $timeFile
@@ -21,10 +22,15 @@ do
 	speciesTree=../Dataset/$folder/true_tree_trimmed
 	echo $speciesTree
 	if [ $folder == "11-taxon" ];then
-	innerFolderNames=("${innerFolderNames1[@]}")
+	innerFolderNames=("${innerFolderNames11[@]}")
+	
+	elif [ $folder == "15-taxon" ];then
+	innerFolderNames=("${innerFolderNames15[@]}")
+	R=10
 	
 	elif [ $folder == "37-taxon" ];then
-	innerFolderNames=("${innerFolderNames2[@]}")
+	innerFolderNames=("${innerFolderNames37[@]}")
+	
 
 	
 	else
@@ -32,15 +38,16 @@ do
 	fi
 	
 	echo  ${innerFolderNames[@]}
-	for inner_folder in ${innerFolderNames2[@]}
+	for inner_folder in ${innerFolderNames[@]}
 	do
 	
 	  
 	 
-		for j in {1..20}
+		for ((j=1;j<=$R;j++))
 		do
 			 
 			gt_folder=$inner_folder/R$j
+			echo "sss"
 			
 			gt=$gt_folder/all_gt.tre
 			
@@ -65,7 +72,7 @@ do
 					# cp gt.best.of.10.tre  $speciesTree
 					# rm -r gt*
 					echo $DIFF
-					rm temp.tre
+					# rm temp.tre
 				
 
              done
@@ -83,8 +90,7 @@ done
 
 
 
-# Running stelar
-methodNames=( MP MV )
+
 declare -A sum_diffs
 declare -A sum_rfs
 declare -A count_diffs
@@ -116,7 +122,7 @@ do
 		done
 	  
 	 
-		for j in {1..20}
+		for ((j=1;j<=$R;j++))
 		do
 			 
 			# gt_folder=$inner_folder/R$j
@@ -140,16 +146,26 @@ do
 
 				# fi
 				input=../Dataset/$folder/$inner_folder/R$j/stelar_inputs/stelar_input_$method.tre
+				input_sanitized=../Dataset/$folder/$inner_folder/R$j/stelar_inputs/stelar_input_sanitized$method.tre
 				output=../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre
 				stripped_output=../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.stripped.tre
 				true_tree=../Dataset/$folder/true_tree_trimmed
 
 				touch $output
 				echo $input
+				
+
+				python3 helper.py $input $input_sanitized
 			
 				START=$(date +%s.%N)
+			
+						
 				
-				java -jar stelar.jar -i $input -o $output
+				 
+				java -jar stelar.jar -i $input_sanitized -o $output
+
+
+				
 				
 				END=$(date +%s.%N)
 				DIFF=$(echo "$END - $START" | bc)

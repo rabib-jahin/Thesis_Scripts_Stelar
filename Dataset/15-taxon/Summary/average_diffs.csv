@@ -1,0 +1,8 @@
+folder,inner_folder,method,average_diff
+
+15-taxon,100gene-100bp,MP,5.019165
+
+15-taxon,100gene-1000bp,MP,3.705060
+
+15-taxon,100gene-true,MP,4.010257
+
