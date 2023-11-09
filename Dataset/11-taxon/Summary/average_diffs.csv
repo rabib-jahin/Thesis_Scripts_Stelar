@@ -1,12 +1,12 @@
 folder,inner_folder,method,average_diff
 
-11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MP,1.217176
+11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MP,0.949790
 
-11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MP,1.003973
+11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MP,1.105568
 
-11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MP,0.984181
+11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MP,1.474499
 
-11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MP,1.633148
+11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MP,1.895332
 
-11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MP,1.336562
+11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MP,3.645291
 

@@ -1,26 +1,2 @@
 folder,inner_folder,method,average_diff
 
-37-taxon,noscale.25g.500b,MP,1.493410
-
-37-taxon,noscale.50g.500b,MP,2.218261
-
-37-taxon,noscale.100g.500b,MP,5.777094
-
-37-taxon,noscale.200g.250b,MP,22.406186
-
-37-taxon,noscale.200g.500b,MP,11.436980
-
-37-taxon,noscale.200g.1000b,MP,8.088344
-
-37-taxon,noscale.200g.1500b,MP,7.143964
-
-37-taxon,noscale.200g.true,MP,5.725155
-
-37-taxon,noscale.400g.500b,MP,24.354074
-
-37-taxon,noscale.800g.500b,MP,165.400651
-
-37-taxon,scale2d.200g.500b,MP,33.275284
-
-37-taxon,scale2u.200g.500b,MP,5.493280
-
