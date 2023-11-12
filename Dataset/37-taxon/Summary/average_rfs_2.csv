@@ -1,38 +1,50 @@
 folder,inner_folder,method,average_rf
 
 37-taxon,noscale.25g.500b,MP,0.113235
+
 37-taxon,noscale.25g.500b,MV,0.116176
 
 37-taxon,noscale.50g.500b,MP,0.069118
+
 37-taxon,noscale.50g.500b,MV,0.070588
 
 37-taxon,noscale.100g.500b,MP,0.067647
+
 37-taxon,noscale.100g.500b,MV,0.067647
 
 37-taxon,noscale.200g.250b,MP,0.061765
+
 37-taxon,noscale.200g.250b,MV,0.063235
 
 37-taxon,noscale.200g.500b,MP,0.033824
+
 37-taxon,noscale.200g.500b,MV,0.035294
 
 37-taxon,noscale.200g.1000b,MP,0.026471
+
 37-taxon,noscale.200g.1000b,MV,0.026471
 
 37-taxon,noscale.200g.1500b,MP,0.019118
+
 37-taxon,noscale.200g.1500b,MV,0.022059
 
 37-taxon,noscale.200g.true,MP,0.016176
+
 37-taxon,noscale.200g.true,MV,0.014706
 
 37-taxon,noscale.400g.500b,MP,0.014706
+
 37-taxon,noscale.400g.500b,MV,0.014706
 
 37-taxon,noscale.800g.500b,MP,0.008824
+
 37-taxon,noscale.800g.500b,MV,0.005882
 
 37-taxon,scale2d.200g.500b,MP,0.041176
+
 37-taxon,scale2d.200g.500b,MV,0.042647
 
 37-taxon,scale2u.200g.500b,MP,0.026471
+
 37-taxon,scale2u.200g.500b,MV,0.027941
 

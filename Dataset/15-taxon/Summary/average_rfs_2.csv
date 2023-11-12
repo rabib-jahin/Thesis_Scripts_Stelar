@@ -1,20 +1,26 @@
 folder,inner_folder,method,average_rf
 
 15-taxon,100gene-100bp,MP,0.433333
+
 15-taxon,100gene-100bp,MV,0.433333
 
 15-taxon,100gene-1000bp,MP,0.100000
+
 15-taxon,100gene-1000bp,MV,0.100000
 
 15-taxon,100gene-true,MP,0.025000
+
 15-taxon,100gene-true,MV,0.016667
 
-15-taxon,1000gene-100bp,MP,0.000000
-15-taxon,1000gene-100bp,MV,0.000000
+15-taxon,1000gene-100bp,MP,0.316667
 
-15-taxon,1000gene-1000bp,MP,0.000000
-15-taxon,1000gene-1000bp,MV,0.000000
+15-taxon,1000gene-100bp,MV,0.316667
+
+15-taxon,1000gene-1000bp,MP,0.033333
+
+15-taxon,1000gene-1000bp,MV,0.033333
 
 15-taxon,1000gene-true,MP,0.000000
+
 15-taxon,1000gene-true,MV,0.000000
 
