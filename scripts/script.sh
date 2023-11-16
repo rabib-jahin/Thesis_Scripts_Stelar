@@ -3,7 +3,7 @@
 # Local files
 
 # Outer folders with taxa numbers
-folders=( 11-taxon 15-taxon 37-taxon )
+folders=( 11-taxon 15-taxon 37-taxon 48-taxon  )
 
 # Replicates
 R=20
@@ -12,9 +12,10 @@ R=20
 innerFolderNames11=(estimated_Xgenes_strongILS/estimated_5genes_strongILS estimated_Xgenes_strongILS/estimated_15genes_strongILS estimated_Xgenes_strongILS/estimated_25genes_strongILS estimated_Xgenes_strongILS/estimated_50genes_strongILS estimated_Xgenes_strongILS/estimated_100genes_strongILS )
 innerFolderNames37=(noscale.25g.500b noscale.50g.500b noscale.100g.500b noscale.200g.250b noscale.200g.500b noscale.200g.1000b noscale.200g.1500b noscale.200g.true noscale.400g.500b noscale.800g.500b scale2d.200g.500b scale2u.200g.500b )
 innerFolderNames15=(100gene-100bp 100gene-1000bp 100gene-true 1000gene-100bp 1000gene-1000bp 1000gene-true)
+innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-500-500 1X-1000-500 2X-1000-500)
 
 # Rooting Methods
-methodNames=(MP MV)
+methodNames=( MP MV )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -36,6 +37,9 @@ do
 	
 	elif [ $folder == "37-taxon" ];then
 		innerFolderNames=("${innerFolderNames37[@]}")
+		R=20
+	elif [ $folder == "48-taxon" ];then
+		innerFolderNames=("${innerFolderNames48[@]}")
 		R=20
 	else
 		echo ""
@@ -60,12 +64,16 @@ do
 				file=../Dataset/$folder/$gt
 				START=$(date +%s.%N)
 				echo here
-				python3 utils.py $file temp.tre
-				python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
-				END=$(date +%s.%N)
-				DIFF=$(echo "$END - $START" | bc)
+				if [ $method == "ORIGINAL" ];then
+					cp $file ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+				else
+					python3 utils.py $file temp.tre
+					python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
+					END=$(date +%s.%N)
+					DIFF=$(echo "$END - $START" | bc)
 
-				echo $DIFF
+					echo $DIFF
+				fi
              done
 			# break
 		done
@@ -118,6 +126,9 @@ do
 	
 	elif [ $folder == "37-taxon" ];then
 		innerFolderNames=("${innerFolderNames37[@]}")
+		R=20
+	elif [ $folder == "48-taxon" ];then
+		innerFolderNames=("${innerFolderNames48[@]}")
 		R=20
 	fi
 
