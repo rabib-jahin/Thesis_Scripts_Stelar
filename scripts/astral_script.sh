@@ -106,13 +106,13 @@ do
                 average_diff=$(echo "${sum_diffs} / ${count_diffs}" | bc -l)
                 printf "Average DIFF for astral: %f\n"  "$average_diff"
                 # Uncomment the following line if you want to write the average to a file
-                printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv
-				printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv_main
+                printf "astral,%s,%s,None,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv
+				printf "astral,%s,%s,None,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv_main
                 average_rf=$(echo "${sum_rfs} / ${count_diffs}" | bc -l)
 				printf "Average RF for astral: %f\n"  "$average_rf"
                 
-                printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv
-				printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv_main
+                printf "astral,%s,%s,None,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv
+				printf "astral,%s,%s,None,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv_main
               
 
         fi
