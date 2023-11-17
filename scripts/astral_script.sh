@@ -97,7 +97,7 @@ do
             
 			
 		
-			 #rm -r ../Dataset/$folder/$inner_folder/R$j/astral_outputs
+			 rm -r ../Dataset/$folder/$inner_folder/R$j/astral_outputs
 			# break
 
 		done 

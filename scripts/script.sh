@@ -2,8 +2,8 @@
 # set -ex
 # Local files
 
-# Outer folders with taxa numbers
-folders=( 11-taxon 15-taxon 37-taxon 48-taxon  )
+# Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
+folders=( 11-taxon )
 
 # Replicates
 R=20
@@ -14,8 +14,8 @@ innerFolderNames37=(noscale.25g.500b noscale.50g.500b noscale.100g.500b noscale.
 innerFolderNames15=(100gene-100bp 100gene-1000bp 100gene-true 1000gene-100bp 1000gene-1000bp 1000gene-true)
 innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-500-500 1X-1000-500 2X-1000-500)
 
-# Rooting Methods
-methodNames=( MP MV )
+# Rooting Methods MAD, MP, MV, OG, RD
+methodNames=( MAD MP MV )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -60,20 +60,53 @@ do
 			for method in  ${methodNames[@]}
 			do
  
-			                
 				file=../Dataset/$folder/$gt
 				START=$(date +%s.%N)
 				echo here
-				if [ $method == "ORIGINAL" ];then
+				if [ $method == "OG" ];then
 					cp $file ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
-				else
+
+				elif [ "$method" == "MP" ] || [ "$method" == "MV" ]; then
+					# Your existing code for MP and MV
 					python3 utils.py $file temp.tre
 					python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
 					END=$(date +%s.%N)
 					DIFF=$(echo "$END - $START" | bc)
-
 					echo $DIFF
+
+				elif [ "$method" == "MAD" ]; then
+					# Code for MAD
+					# Add your commands for the MAD method here
+					python3 utils.py $file temp.tre
+					python3 ../mad/mad.py temp.tre -n
+					cat temp.tre.rooted > ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+					rm temp.tre.rooted
+					rm temp.tre
+					echo "MAD"
+					# python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
+					END=$(date +%s.%N)
+					DIFF=$(echo "$END - $START" | bc)
+					echo $DIFF
+					
+
+				elif [ "$method" == "RD" ]; then
+					# Code for RD
+					# Add your commands for the RD method here
+					echo "RD"
+
+				else
+					echo "Error: Unknown method $method"
 				fi
+
+
+				# else
+				# 	python3 utils.py $file temp.tre
+				# 	python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
+				# 	END=$(date +%s.%N)
+				# 	DIFF=$(echo "$END - $START" | bc)
+
+				# 	echo $DIFF
+				# fi
              done
 			# break
 		done
