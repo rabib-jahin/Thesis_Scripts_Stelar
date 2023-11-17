@@ -129,10 +129,10 @@ declare -A count_diffs
 mkdir -p ../Dataset/Summary
 timediffcsv_main=../Dataset/Summary/average_diffs.csv
 rf_csv_main=../Dataset/Summary/average_rfs.csv
-echo "Folder,Method,AverageDiff" > $timediffcsv_main
-printf "%s,%s,%s,%s\n\n" "folder" "inner_folder" "method" "average_diff" > $timediffcsv_main
-echo "Folder,Method,AverageRF" > $rf_csv_main
-printf "%s,%s,%s,%s\n\n" "folder" "inner_folder" "method" "average_rf" > $rf_csv_main
+# echo "Folder,Method,AverageDiff" > $timediffcsv_main
+printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_diff" > $timediffcsv_main
+# echo "Folder,Method,AverageRF" > $rf_csv_main
+printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_rf" > $rf_csv_main
 
 
 for folder in ${folders[@]}
@@ -143,10 +143,10 @@ do
 	mkdir -p ../Dataset/$folder/Summary
 	timediffcsv=../Dataset/$folder/Summary/average_diffs.csv
 	rf_csv=../Dataset/$folder/Summary/average_rfs.csv
-	echo "Folder,Method,AverageDiff" > $timediffcsv
-	printf "%s,%s,%s,%s\n\n" "folder" "inner_folder" "method" "average_diff" > $timediffcsv
-	echo "Folder,Method,AverageRF" > $rf_csv
-	printf "%s,%s,%s,%s\n\n" "folder" "inner_folder" "method" "average_rf" > $rf_csv
+	# echo "Folder,Method,AverageDiff" > $timediffcsv
+	printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_diff" > $timediffcsv
+	# echo "Folder,Method,AverageRF" > $rf_csv
+	printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_rf" > $rf_csv
 
 
 	if [ $folder == "11-taxon" ];then
@@ -231,13 +231,13 @@ do
                 average_diff=$(echo "${sum_diffs[$method]} / ${count_diffs[$method]}" | bc -l)
                 printf "Average DIFF for %s: %f\n" "$method" "$average_diff"
                 # Uncomment the following line if you want to write the average to a file
-                printf "%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_diff" >> $timediffcsv
-				printf "%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_diff" >> $timediffcsv_main
+                printf "stelar,%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_diff" >> $timediffcsv
+				printf "stelar,%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_diff" >> $timediffcsv_main
                 average_rf=$(echo "${sum_rfs[$method]} / ${count_diffs[$method]}" | bc -l)
 				printf "Average RF for %s: %f\n" "$method" "$average_rf"
                 
-                printf "%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_rf" >> $rf_csv
-				printf "%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_rf" >> $rf_csv_main
+                printf "stelar,%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_rf" >> $rf_csv
+				printf "stelar,%s,%s,%s,%.6f\n" "$folder" "$inner_folder" "$method" "$average_rf" >> $rf_csv_main
               
 
             fi

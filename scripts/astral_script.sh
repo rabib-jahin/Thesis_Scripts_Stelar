@@ -25,9 +25,9 @@ mkdir -p ../Dataset/Summary_Astral
 timediffcsv_main=../Dataset/Summary_Astral/average_diffs.csv
 rf_csv_main=../Dataset/Summary_Astral/average_rfs.csv
 echo "Folder,AverageDiff" > $timediffcsv_main
-printf "%s,%s,%s\n\n" "folder" "inner_folder" "average_diff" > $timediffcsv_main
+printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_diff" > $timediffcsv_main
 echo "Folder,Method,AverageRF" > $rf_csv_main
-printf "%s,%s,%s\n\n" "folder" "inner_folder"  "average_rf" > $rf_csv_main
+printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_rf" > $rf_csv_main
 
 for folder in ${folders[@]}
 do
@@ -36,9 +36,9 @@ do
 	timediffcsv=../Dataset/$folder/Summary/average_diffs_astral.csv
 	rf_csv=../Dataset/$folder/Summary/average_rfs_astral.csv
 	echo "Folder,AverageDiff" > $timediffcsv
-	printf "%s,%s,%s\n\n" "folder" "inner_folder"  "average_diff" > $timediffcsv
+	printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_diff" > $timediffcsv
 	echo "Folder,Method,AverageRF" > $rf_csv
-	printf "%s,%s,%s\n\n" "folder" "inner_folder"  "average_rf" > $rf_csv
+	printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_rf" > $rf_csv
 	
 	
 
@@ -106,13 +106,13 @@ do
                 average_diff=$(echo "${sum_diffs} / ${count_diffs}" | bc -l)
                 printf "Average DIFF for astral: %f\n"  "$average_diff"
                 # Uncomment the following line if you want to write the average to a file
-                printf "%s,%s,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv
-				printf "%s,%s,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv_main
+                printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv
+				printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_diff" >> $timediffcsv_main
                 average_rf=$(echo "${sum_rfs} / ${count_diffs}" | bc -l)
 				printf "Average RF for astral: %f\n"  "$average_rf"
                 
-                printf "%s,%s,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv
-				printf "%s,%s,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv_main
+                printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv
+				printf "astral,%s,%s,,%.6f\n" "$folder" "$inner_folder"  "$average_rf" >> $rf_csv_main
               
 
         fi
