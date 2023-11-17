@@ -1,0 +1,14 @@
+folder,inner_folder,average_diff
+
+15-taxon,100gene-100bp,2.222928
+
+15-taxon,100gene-1000bp,1.915884
+
+15-taxon,100gene-true,1.553241
+
+15-taxon,1000gene-100bp,0.177374
+
+15-taxon,1000gene-1000bp,0.124849
+
+15-taxon,1000gene-true,0.133599
+

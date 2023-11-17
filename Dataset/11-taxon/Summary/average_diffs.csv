@@ -1,17 +1,22 @@
-folder,inner_folder,method,average_diff
+summary_method,folder,inner_folder,rooting_method,average_diff
 
-11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MP,0.147080
-11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MV,0.146835
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MAD,0.113047
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MP,0.110668
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MV,0.113983
 
-11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MP,0.160981
-11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MV,0.159243
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MAD,0.137260
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MP,0.136874
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MV,0.137749
 
-11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MP,0.182009
-11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MV,0.181095
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MAD,0.154957
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MP,0.153650
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MV,0.158423
 
-11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MP,0.229875
-11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MV,0.224545
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MAD,0.195987
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MP,0.196355
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MV,0.196594
 
-11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MP,0.284968
-11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MV,0.298631
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MAD,0.239430
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MP,0.244796
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MV,0.244443
 

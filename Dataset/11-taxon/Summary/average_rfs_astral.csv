@@ -1,0 +1,12 @@
+folder,inner_folder,average_rf
+
+11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,0.293750
+
+11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,0.131250
+
+11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,0.100000
+
+11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,0.056250
+
+11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,0.043750
+
