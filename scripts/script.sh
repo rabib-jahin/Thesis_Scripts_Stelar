@@ -3,7 +3,7 @@
 # Local files
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
-folders=( 11-taxon )
+folders=( 48-taxon )
 
 # Replicates
 R=20
@@ -15,7 +15,7 @@ innerFolderNames15=(100gene-100bp 100gene-1000bp 100gene-true 1000gene-100bp 100
 innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-500-500 1X-1000-500 2X-1000-500)
 
 # Rooting Methods MAD, MP, MV, OG, RD
-methodNames=( MAD MP MV )
+methodNames=( MP MV MAD )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
