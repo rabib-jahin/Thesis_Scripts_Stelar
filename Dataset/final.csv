@@ -4,56 +4,78 @@ astral,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,None,0.293
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MP,0.312500
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MV,0.312500
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MAD,0.113047
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,OG,0.312500
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,RAND,0.350000
 
 astral,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,None,0.131250
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MP,0.143750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MV,0.143750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MAD,0.137260
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,OG,0.125000
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,RAND,0.237500
 
 astral,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,None,0.100000
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MP,0.093750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MV,0.093750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MAD,0.154957
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,OG,0.093750
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,RAND,0.237500
 
 astral,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,None,0.056250
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MP,0.050000
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MV,0.050000
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MAD,0.195987
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,OG,0.068750
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,RAND,0.187500
 
 astral,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,None,0.043750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MP,0.043750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MV,0.043750
 stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,MAD,0.239430
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,OG,0.050000
+stelar,11-taxon,estimated_Xgenes_strongILS/estimated_100genes_strongILS,RAND,0.131250
 
 astral,15-taxon,100gene-100bp,None,0.308333
 stelar,15-taxon,100gene-100bp,MP,0.433333
 stelar,15-taxon,100gene-100bp,MV,0.433333
 stelar,15-taxon,100gene-100bp,MAD,2.070263
+stelar,15-taxon,100gene-100bp,OG,0.433333
+stelar,15-taxon,100gene-100bp,RAND,0.441667
 
 astral,15-taxon,100gene-1000bp,None,0.075000
 stelar,15-taxon,100gene-1000bp,MP,0.100000
 stelar,15-taxon,100gene-1000bp,MV,0.100000
 stelar,15-taxon,100gene-1000bp,MAD,2.058696
+stelar,15-taxon,100gene-1000bp,OG,0.100000
+stelar,15-taxon,100gene-1000bp,RAND,0.200000
 
 astral,15-taxon,100gene-true,None,0.000000
 stelar,15-taxon,100gene-true,MP,0.025000
 stelar,15-taxon,100gene-true,MV,0.016667
 stelar,15-taxon,100gene-true,MAD,0.352733
+stelar,15-taxon,100gene-true,OG,0.000000
+stelar,15-taxon,100gene-true,RAND,0.141667
 
 astral,15-taxon,1000gene-100bp,None,0.000000
 stelar,15-taxon,1000gene-100bp,MP,0.000000
 stelar,15-taxon,1000gene-100bp,MV,0.000000
 stelar,15-taxon,1000gene-100bp,MAD,0.163645
+stelar,15-taxon,1000gene-100bp,OG,0.316667
+stelar,15-taxon,1000gene-100bp,RAND,0.358333
 
 astral,15-taxon,1000gene-1000bp,None,0.000000
 stelar,15-taxon,1000gene-1000bp,MP,0.000000
 stelar,15-taxon,1000gene-1000bp,MV,0.000000
 stelar,15-taxon,1000gene-1000bp,MAD,0.185078
+stelar,15-taxon,1000gene-1000bp,OG,0.033333
+stelar,15-taxon,1000gene-1000bp,RAND,0.166667
 
 astral,15-taxon,1000gene-true,None,0.000000
 stelar,15-taxon,1000gene-true,MP,0.000000
 stelar,15-taxon,1000gene-true,MV,0.000000
 stelar,15-taxon,1000gene-true,MAD,0.121250
+stelar,15-taxon,1000gene-true,OG,0.000000
+stelar,15-taxon,1000gene-true,RAND,0.125000
 
 astral,37-taxon,noscale.25g.500b,None,0.113235
 stelar,37-taxon,noscale.25g.500b,MP,0.113235

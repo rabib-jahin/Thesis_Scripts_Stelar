@@ -1,7 +1,11 @@
 #!/bin/bash
 
-in='../Dataset/37-taxon/noscale.25g.500b/R1/all_gt.tre'
-true_tre='../Dataset/37-taxon/true_tree_trimmed'
+# in='../Dataset/37-taxon/noscale.25g.500b/R1/all_gt.tre'
+# true_tre='../Dataset/37-taxon/true_tree_trimmed'
+
+in='../Dataset/15-taxon/100gene-100bp/R1/all_gt.tre'
+true_tre='../Dataset/15-taxon/true_tree_trimmed'
+
 st_in='all_gt_randroot.tre'
 st_out='stelar_output.tre' 
 

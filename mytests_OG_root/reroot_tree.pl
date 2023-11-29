@@ -1,5 +1,7 @@
 #!/usr/bin/perl
-use lib "../bioPerl-1.5.2/lib/perl5";
+use lib "/home/tanjeem29/Academics/Thesis/STELAR/Thesis_Scripts_Stelar/bioPerl-1.5.2/lib/perl5";
+# use lib "../bioPerl-1.5.2/lib/perl5";
+
 # use lib "../BioPerl-1.7.8/lib";
 # use lib "/mnt/c/Users/mazha/libs/bioPerl-1.5.2/lib/perl5";
 #use lib "/projects/sate3/tools/bin/bioPerl-1.5.2/lib/perl5";

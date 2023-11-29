@@ -3,7 +3,7 @@
 # Local files
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
-folders=( 48-taxon )
+folders=( 15-taxon )
 
 # Replicates
 R=20
@@ -11,12 +11,12 @@ R=20
 # Diffrerent inner folders for each taxa number
 innerFolderNames11=(estimated_Xgenes_strongILS/estimated_5genes_strongILS estimated_Xgenes_strongILS/estimated_15genes_strongILS estimated_Xgenes_strongILS/estimated_25genes_strongILS estimated_Xgenes_strongILS/estimated_50genes_strongILS estimated_Xgenes_strongILS/estimated_100genes_strongILS )
 innerFolderNames37=(noscale.25g.500b noscale.50g.500b noscale.100g.500b noscale.200g.250b noscale.200g.500b noscale.200g.1000b noscale.200g.1500b noscale.200g.true noscale.400g.500b noscale.800g.500b scale2d.200g.500b scale2u.200g.500b )
-innerFolderNames15=(100gene-100bp 100gene-1000bp 100gene-true 1000gene-100bp 1000gene-1000bp 1000gene-true)
+innerFolderNames15=(100gene-100bp/estimated-genetrees 100gene-1000bp/estimated-genetrees 100gene-true 1000gene-100bp/estimated-genetrees 1000gene-1000bp/estimated-genetrees 1000gene-true)
 innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-500-500 1X-1000-500 2X-1000-500)
-outgroups=(11 xx GAL xx)
+# outgroups=(11 O GAL STRCA)
 
-# Rooting Methods MAD, MP, MV, OG, RD
-methodNames=( MP MV MAD )
+# Rooting Methods MAD, MP, MV, OG, RD, NOCHANGE, RAND
+methodNames=( RAND )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -31,17 +31,23 @@ do
 	if [ $folder == "11-taxon" ];then
 		innerFolderNames=("${innerFolderNames11[@]}")
 		R=20
+		outgroup='11'
 	
 	elif [ $folder == "15-taxon" ];then
 		innerFolderNames=("${innerFolderNames15[@]}")
 		R=10
+		outgroup='O'
 	
 	elif [ $folder == "37-taxon" ];then
 		innerFolderNames=("${innerFolderNames37[@]}")
 		R=20
+		outgroup='GAL'
+
 	elif [ $folder == "48-taxon" ];then
 		innerFolderNames=("${innerFolderNames48[@]}")
 		R=20
+		outgroup='STRCA'
+
 	else
 		echo ""
 	fi
@@ -64,16 +70,30 @@ do
 				file=../Dataset/$folder/$gt
 				START=$(date +%s.%N)
 				echo here
-				if [ $method == "OG" ];then
+				if [ $method == "NOCHANGE" ];then
 					cp $file ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+				
+				elif [ "$method" == "RAND" ]; then
+					# Code for MAD
+					# Add your commands for the MAD method here
+					python3 utils.py $file temp.tre
+					python3 randroot.py $file ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+					echo "RAND"
+
+				elif [ "$method" == "OG" ]; then
+					# Code for OG
+					# Add your commands for the OG method here
+					python3 utils.py $file temp.tre
+					perl reroot_tree.pl -t $file -r $outgroup -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+					echo "OG"
+					# python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
+					
 
 				elif [ "$method" == "MP" ] || [ "$method" == "MV" ]; then
 					# Your existing code for MP and MV
 					python3 utils.py $file temp.tre
 					python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
-					END=$(date +%s.%N)
-					DIFF=$(echo "$END - $START" | bc)
-					echo $DIFF
+			
 
 				elif [ "$method" == "MAD" ]; then
 					# Code for MAD
@@ -85,19 +105,28 @@ do
 					rm temp.tre
 					echo "MAD"
 					# python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
-					END=$(date +%s.%N)
-					DIFF=$(echo "$END - $START" | bc)
-					echo $DIFF
+					
 					
 
 				elif [ "$method" == "RD" ]; then
 					# Code for RD
 					# Add your commands for the RD method here
 					echo "RD"
+					if [ "$innerfolder" == "100gene-true" ] || [ "$innerfolder" == "100gene-true" ]; then
+						echo "RD and skipping innerfolder $innerfolder"
+						continue
+					fi
+
+					echo "RD and not skipping innerfolder $innerfolder"
+
 
 				else
 					echo "Error: Unknown method $method"
 				fi
+
+				END=$(date +%s.%N)
+				DIFF=$(echo "$END - $START" | bc)
+				echo $DIFF
 
 
 				# else
