@@ -1,38 +1,26 @@
-folder,inner_folder,method,average_diff
+summary_method,folder,inner_folder,rooting_method,average_diff
 
-37-taxon,noscale.25g.500b,MP,0.515756
-37-taxon,noscale.25g.500b,MV,0.483116
+stelar,37-taxon,noscale.25g.500b,MAD,0.155480
 
-37-taxon,noscale.50g.500b,MP,0.957546
-37-taxon,noscale.50g.500b,MV,0.874470
+stelar,37-taxon,noscale.50g.500b,MAD,0.150560
 
-37-taxon,noscale.100g.500b,MP,1.811122
-37-taxon,noscale.100g.500b,MV,1.872358
+stelar,37-taxon,noscale.100g.500b,MAD,0.156812
 
-37-taxon,noscale.200g.250b,MP,5.211899
-37-taxon,noscale.200g.250b,MV,5.144192
+stelar,37-taxon,noscale.200g.250b,MAD,0.157157
 
-37-taxon,noscale.200g.500b,MP,2.554925
-37-taxon,noscale.200g.500b,MV,2.374261
+stelar,37-taxon,noscale.200g.500b,MAD,5.334942
 
-37-taxon,noscale.200g.1000b,MP,1.884229
-37-taxon,noscale.200g.1000b,MV,1.855182
+stelar,37-taxon,noscale.200g.1000b,MAD,0.154675
 
-37-taxon,noscale.200g.1500b,MP,1.657269
-37-taxon,noscale.200g.1500b,MV,1.636405
+stelar,37-taxon,noscale.200g.1500b,MAD,0.143327
 
-37-taxon,noscale.200g.true,MP,1.513903
-37-taxon,noscale.200g.true,MV,1.480367
+stelar,37-taxon,noscale.200g.true,MAD,0.131856
 
-37-taxon,noscale.400g.500b,MP,5.818952
-37-taxon,noscale.400g.500b,MV,5.654985
+stelar,37-taxon,noscale.400g.500b,MAD,0.139124
 
-37-taxon,noscale.800g.500b,MP,18.674080
-37-taxon,noscale.800g.500b,MV,16.022511
+stelar,37-taxon,noscale.800g.500b,MAD,0.140445
 
-37-taxon,scale2d.200g.500b,MP,6.862685
-37-taxon,scale2d.200g.500b,MV,6.787365
+stelar,37-taxon,scale2d.200g.500b,MAD,0.174962
 
-37-taxon,scale2u.200g.500b,MP,1.442481
-37-taxon,scale2u.200g.500b,MV,1.423750
+stelar,37-taxon,scale2u.200g.500b,MAD,0.147535
 

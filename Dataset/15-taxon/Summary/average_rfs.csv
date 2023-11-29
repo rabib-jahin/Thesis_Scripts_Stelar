@@ -1,20 +1,14 @@
-folder,inner_folder,method,average_rf
+summary_method,folder,inner_folder,rooting_method,average_rf
 
-15-taxon,100gene-100bp,MP,0.433333
-15-taxon,100gene-100bp,MV,0.433333
+stelar,15-taxon,100gene-100bp/estimated-genetrees,RAND,0.441667
 
-15-taxon,100gene-1000bp,MP,0.100000
-15-taxon,100gene-1000bp,MV,0.100000
+stelar,15-taxon,100gene-1000bp/estimated-genetrees,RAND,0.200000
 
-15-taxon,100gene-true,MP,0.025000
-15-taxon,100gene-true,MV,0.016667
+stelar,15-taxon,100gene-true,RAND,0.141667
 
-15-taxon,1000gene-100bp,MP,0.000000
-15-taxon,1000gene-100bp,MV,0.000000
+stelar,15-taxon,1000gene-100bp/estimated-genetrees,RAND,0.358333
 
-15-taxon,1000gene-1000bp,MP,0.000000
-15-taxon,1000gene-1000bp,MV,0.000000
+stelar,15-taxon,1000gene-1000bp/estimated-genetrees,RAND,0.166667
 
-15-taxon,1000gene-true,MP,0.000000
-15-taxon,1000gene-true,MV,0.000000
+stelar,15-taxon,1000gene-true,RAND,0.125000
 

@@ -1,18 +1,14 @@
 summary_method,folder,inner_folder,rooting_method,average_rf
 
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MAD,0.312500
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MP,0.312500
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,MV,0.312500
+stelar,15-taxon,100gene-100bp/estimated-genetrees,RAND,0.441667
 
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MAD,0.143750
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MP,0.143750
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,MV,0.143750
+stelar,15-taxon,100gene-1000bp/estimated-genetrees,RAND,0.200000
 
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MAD,0.093750
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MP,0.093750
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,MV,0.093750
+stelar,15-taxon,100gene-true,RAND,0.141667
 
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MAD,0.050000
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MP,0.050000
-stelar,11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,MV,0.050000
+stelar,15-taxon,1000gene-100bp/estimated-genetrees,RAND,0.358333
+
+stelar,15-taxon,1000gene-1000bp/estimated-genetrees,RAND,0.166667
+
+stelar,15-taxon,1000gene-true,RAND,0.125000
 
