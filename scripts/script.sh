@@ -13,6 +13,7 @@ innerFolderNames11=(estimated_Xgenes_strongILS/estimated_5genes_strongILS estima
 innerFolderNames37=(noscale.25g.500b noscale.50g.500b noscale.100g.500b noscale.200g.250b noscale.200g.500b noscale.200g.1000b noscale.200g.1500b noscale.200g.true noscale.400g.500b noscale.800g.500b scale2d.200g.500b scale2u.200g.500b )
 innerFolderNames15=(100gene-100bp 100gene-1000bp 100gene-true 1000gene-100bp 1000gene-1000bp 1000gene-true)
 innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-500-500 1X-1000-500 2X-1000-500)
+outgroups=(11 xx GAL xx)
 
 # Rooting Methods MAD, MP, MV, OG, RD
 methodNames=( MP MV MAD )
