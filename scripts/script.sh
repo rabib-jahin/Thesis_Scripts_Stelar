@@ -16,7 +16,7 @@ innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-5
 # outgroups=(11 O GAL STRCA)
 
 # Rooting Methods MAD, MP, MV, OG, RD, NOCHANGE, RAND
-methodNames=( RD )
+methodNames=( MAD MP MV OG RAND )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -63,12 +63,17 @@ do
 			gt=$gt_folder/all_gt.tre
 			
 			mkdir -p ../Dataset/$folder/$gt_folder/stelar_inputs
+			
 		
 			
 			for method in  ${methodNames[@]}
 			do
- 
+				if [ -f "../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre" ]; then
+					continue
+				fi
+
 				file=../Dataset/$folder/$gt
+				echo -n > ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
 				
 				START=$(date +%s.%N)
 				echo here
@@ -127,7 +132,14 @@ do
                         echo $line > temp_gt.tre
                         
                         rd --msa $fasta --tree temp_gt.tre >> log.txt
+
                         cat temp_gt.tre.rooted.tree >> ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
+						echo "" >> ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+						rm log.txt
+						rm temp_gt.tre
+						rm temp_gt.tre.rooted.tree
+						
+
 
 				    done
 
@@ -232,6 +244,10 @@ do
 			mkdir -p ../Dataset/$folder/$inner_folder/R$j/stelar_outputs/
 			for method in  ${methodNames[@]}
 			do
+				if [ -f "../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre" ]; then
+					continue
+				fi
+
 			    if [ $method=="RD" ]; then
 
                         if [  "$inner_folder" == "100gene-true" ] || [ "$inner_folder" == "1000gene-true" ];then
@@ -273,8 +289,8 @@ do
 
             done
 			
-			rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_inputs
-			rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_outputs
+			# rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_inputs
+			# rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_outputs
 			# break
 
 		done
