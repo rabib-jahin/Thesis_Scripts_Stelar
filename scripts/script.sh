@@ -3,8 +3,8 @@
 # Local files
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
-folders=( 15-taxon )
-
+folders=( 11-taxon )
+fresh=1
 # Replicates
 R=20
 
@@ -16,7 +16,7 @@ innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-5
 # outgroups=(11 O GAL STRCA)
 
 # Rooting Methods MAD, MP, MV, OG, RD, NOCHANGE, RAND
-methodNames=( RD )
+methodNames=(  MV  )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -68,7 +68,10 @@ do
 			
 			for method in  ${methodNames[@]}
 			do
- 
+				if [ -f "../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre" ] && [ $fresh -eq 0 ]; then
+					continue
+				fi
+
 				file=../Dataset/$folder/$gt
 				echo -n > ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
 				
@@ -241,10 +244,15 @@ do
 			mkdir -p ../Dataset/$folder/$inner_folder/R$j/stelar_outputs/
 			for method in  ${methodNames[@]}
 			do
-			    if [ $method=="RD" ]; then
+				if [ -f "../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre" ] && [ $fresh -eq 0 ]; then
+					continue
+				fi
+
+			    if [ $method == "RD" ]; then
 
                         if [  "$inner_folder" == "100gene-true" ] || [ "$inner_folder" == "1000gene-true" ];then
                             echo "RD and skipping innerfolder $innerfolder"
+							
                             # temp_=1
                             # break
                             continue
@@ -258,12 +266,13 @@ do
 				stripped_output=../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.stripped.tre
 				true_tree=../Dataset/$folder/true_tree_trimmed
 				touch $output
-				echo $input
+				echo -n > $output
+				echo -n > $input_sanitized
 				
 
 
 				python3 helper.py $input $input_sanitized
-			
+
 				START=$(date +%s.%N)			 
 				java -jar stelar.jar -i $input_sanitized -o $output	
 				END=$(date +%s.%N)
@@ -278,12 +287,14 @@ do
 				sum_diffs[$method]=$(echo "${sum_diffs[$method]} + $DIFF" | bc)
 				sum_rfs[$method]=$(echo "${sum_rfs[$method]} + $RFdistance" | bc)
                 ((count_diffs[$method]++))
+
+				rm $input_sanitized.log
 				# break
 
             done
 			
-			rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_inputs
-			rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_outputs
+			# rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_inputs
+			# rm -r ../Dataset/$folder/$inner_folder/R$j/stelar_outputs
 			# break
 
 		done
