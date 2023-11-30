@@ -16,7 +16,7 @@ innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-5
 # outgroups=(11 O GAL STRCA)
 
 # Rooting Methods MAD, MP, MV, OG, RD, NOCHANGE, RAND
-methodNames=( RAND )
+methodNames=( RD )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -64,10 +64,14 @@ do
 			
 			mkdir -p ../Dataset/$folder/$gt_folder/stelar_inputs
 			
+		
+			
 			for method in  ${methodNames[@]}
 			do
  
 				file=../Dataset/$folder/$gt
+				echo -n > ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+				
 				START=$(date +%s.%N)
 				echo here
 				if [ $method == "NOCHANGE" ];then
@@ -101,24 +105,40 @@ do
 					python3 utils.py $file temp.tre
 					python3 ../mad/mad.py temp.tre -n
 					cat temp.tre.rooted > ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
-					rm temp.tre.rooted
-					rm temp.tre
+					
 					echo "MAD"
 					# python3 ../fastroot/MinVar-Rooting/FastRoot.py -m $method -i temp.tre  -o ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
 					
 					
 
 				elif [ "$method" == "RD" ]; then
+					
 					# Code for RD
 					# Add your commands for the RD method here
 					echo "RD"
-					if [ "$innerfolder" == "100gene-true" ] || [ "$innerfolder" == "100gene-true" ]; then
-						echo "RD and skipping innerfolder $innerfolder"
+					if [ "$inner_folder" == "100gene-true" ] || [ "$inner_folder" == "1000gene-true" ]; then
+						echo "RD and skipping innerfolder $innerfolder for method $method"
 						continue
 					fi
+					echo "in inner folder : $inner_folder"
+					for ((k=1;k<=100;k++))
+					do
+                        echo "$k no going"
+                        fasta=../Dataset/$folder/$gt_folder/$k/$k.fasta
+                        line=$(sed -n "${k}p" "$file")
+                        echo $line > temp_gt.tre
+                        
+                        rd --msa $fasta --tree temp_gt.tre >> log.txt
 
-					echo "RD and not skipping innerfolder $innerfolder"
+                        cat temp_gt.tre.rooted.tree >> ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre 
+						echo "" >> ../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre
+						rm log.txt
+						rm temp_gt.tre
+						rm temp_gt.tre.rooted.tree
+						
 
+
+				    done
 
 				else
 					echo "Error: Unknown method $method"
@@ -198,6 +218,7 @@ do
 
 	for inner_folder in ${innerFolderNames[@]}
 	do
+	 
 		for method in  ${methodNames[@]}
 		do
 			# Initialize sum and count for each method
@@ -205,15 +226,31 @@ do
 			count_diffs[$method]=0
 			sum_rfs[$method]=0
 		done
-	  
+	    # temp_=0
 	 
 		for ((j=1;j<=$R;j++))
 		do
+		#  if [[ $temp_ -eq 1 ]] ;then
+
+        #     break
+
+		#  fi
+
 			 
 
 			mkdir -p ../Dataset/$folder/$inner_folder/R$j/stelar_outputs/
 			for method in  ${methodNames[@]}
 			do
+			    if [ $method=="RD" ]; then
+
+                        if [  "$inner_folder" == "100gene-true" ] || [ "$inner_folder" == "1000gene-true" ];then
+                            echo "RD and skipping innerfolder $innerfolder"
+                            # temp_=1
+                            # break
+                            continue
+                        fi
+				fi
+				# temp_=0
 
 				input=../Dataset/$folder/$inner_folder/R$j/stelar_inputs/stelar_input_$method.tre
 				input_sanitized=../Dataset/$folder/$inner_folder/R$j/stelar_inputs/stelar_input_sanitized$method.tre
@@ -283,4 +320,3 @@ do
 	done
 	# break
 done
-

@@ -1,14 +1,12 @@
 summary_method,folder,inner_folder,rooting_method,average_diff
 
-stelar,15-taxon,100gene-100bp/estimated-genetrees,RAND,2.096171
+stelar,15-taxon,100gene-100bp/estimated-genetrees,RD,1.671403
 
-stelar,15-taxon,100gene-1000bp/estimated-genetrees,RAND,1.965490
+stelar,15-taxon,100gene-1000bp/estimated-genetrees,RD,1.390271
 
-stelar,15-taxon,100gene-true,RAND,1.939125
 
-stelar,15-taxon,1000gene-100bp/estimated-genetrees,RAND,202.252501
+stelar,15-taxon,1000gene-100bp/estimated-genetrees,RD,1.670713
 
-stelar,15-taxon,1000gene-1000bp/estimated-genetrees,RAND,89.474194
+stelar,15-taxon,1000gene-1000bp/estimated-genetrees,RD,1.402665
 
-stelar,15-taxon,1000gene-true,RAND,97.748765
 
