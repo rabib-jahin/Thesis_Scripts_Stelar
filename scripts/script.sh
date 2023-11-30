@@ -3,7 +3,7 @@
 # Local files
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
-folders=( 15-taxon )
+folders=( 11-taxon )
 fresh=1
 # Replicates
 R=20
@@ -272,7 +272,7 @@ do
 
 
 				python3 helper.py $input $input_sanitized
-			
+
 				START=$(date +%s.%N)			 
 				java -jar stelar.jar -i $input_sanitized -o $output	
 				END=$(date +%s.%N)
@@ -287,6 +287,8 @@ do
 				sum_diffs[$method]=$(echo "${sum_diffs[$method]} + $DIFF" | bc)
 				sum_rfs[$method]=$(echo "${sum_rfs[$method]} + $RFdistance" | bc)
                 ((count_diffs[$method]++))
+
+				rm $input_sanitized.log
 				# break
 
             done
