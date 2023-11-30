@@ -4,7 +4,7 @@
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
 folders=( 15-taxon )
-
+fresh=1
 # Replicates
 R=20
 
@@ -16,7 +16,7 @@ innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-5
 # outgroups=(11 O GAL STRCA)
 
 # Rooting Methods MAD, MP, MV, OG, RD, NOCHANGE, RAND
-methodNames=( MAD MP MV OG RAND )
+methodNames=(  MV  )
 
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
@@ -68,7 +68,7 @@ do
 			
 			for method in  ${methodNames[@]}
 			do
-				if [ -f "../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre" ]; then
+				if [ -f "../Dataset/$folder/$gt_folder/stelar_inputs/stelar_input_$method.tre" ] && [ $fresh -eq 0 ]; then
 					continue
 				fi
 
@@ -244,14 +244,15 @@ do
 			mkdir -p ../Dataset/$folder/$inner_folder/R$j/stelar_outputs/
 			for method in  ${methodNames[@]}
 			do
-				if [ -f "../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre" ]; then
+				if [ -f "../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre" ] && [ $fresh -eq 0 ]; then
 					continue
 				fi
 
-			    if [ $method=="RD" ]; then
+			    if [ $method == "RD" ]; then
 
                         if [  "$inner_folder" == "100gene-true" ] || [ "$inner_folder" == "1000gene-true" ];then
                             echo "RD and skipping innerfolder $innerfolder"
+							
                             # temp_=1
                             # break
                             continue
@@ -265,7 +266,8 @@ do
 				stripped_output=../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.stripped.tre
 				true_tree=../Dataset/$folder/true_tree_trimmed
 				touch $output
-				echo $input
+				echo -n > $output
+				echo -n > $input_sanitized
 				
 
 
