@@ -1,12 +1,18 @@
 summary_method,folder,inner_folder,rooting_method,average_diff
 
-stelar,15-taxon,100gene-100bp/estimated-genetrees,RD,1.671403
+stelar,48-taxon,0.5X-1000-500,MP,1092.594000
 
-stelar,15-taxon,100gene-1000bp/estimated-genetrees,RD,1.390271
+stelar,48-taxon,1X-25-500,MP,1.821996
 
+stelar,48-taxon,1X-50-500,MP,3.036882
 
-stelar,15-taxon,1000gene-100bp/estimated-genetrees,RD,1.670713
+stelar,48-taxon,1X-100-500,MP,8.317067
 
-stelar,15-taxon,1000gene-1000bp/estimated-genetrees,RD,1.402665
+stelar,48-taxon,1X-200-500,MP,29.942274
 
+stelar,48-taxon,1X-500-500,MP,187.959244
+
+stelar,48-taxon,1X-1000-500,MP,1188.768973
+
+stelar,48-taxon,2X-1000-500,MP,842.653225
 
