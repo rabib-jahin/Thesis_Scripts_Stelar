@@ -64,7 +64,6 @@ stelar,15-taxon,1000gene-100bp,MV,0.000000
 stelar,15-taxon,1000gene-100bp,MAD,0.163645
 stelar,15-taxon,1000gene-100bp,OG,0.316667
 stelar,15-taxon,1000gene-100bp,RAND,0.358333
-stelar,15-taxon,1000gene-100bp,RD,0.366667
 
 astral,15-taxon,1000gene-1000bp,None,0.000000
 stelar,15-taxon,1000gene-1000bp,MP,0.000000
@@ -72,7 +71,6 @@ stelar,15-taxon,1000gene-1000bp,MV,0.000000
 stelar,15-taxon,1000gene-1000bp,MAD,0.185078
 stelar,15-taxon,1000gene-1000bp,OG,0.033333
 stelar,15-taxon,1000gene-1000bp,RAND,0.166667
-stelar,15-taxon,1000gene-1000bp,RD,0.100000
 
 astral,15-taxon,1000gene-true,None,0.000000
 stelar,15-taxon,1000gene-true,MP,0.000000
@@ -81,76 +79,70 @@ stelar,15-taxon,1000gene-true,MAD,0.121250
 stelar,15-taxon,1000gene-true,OG,0.000000
 stelar,15-taxon,1000gene-true,RAND,0.125000
 
-astral,37-taxon,1X-25-500,None,0.113235
-stelar,37-taxon,1X-25-500,MP,0.113235
-stelar,37-taxon,1X-25-500,MV,0.116176
-stelar,37-taxon,1X-25-500,MAD,0.155480
+astral,37-taxon,noscale.25g.500b,None,0.113235
+stelar,37-taxon,noscale.25g.500b,MP,0.113235
+stelar,37-taxon,noscale.25g.500b,MV,0.116176
+stelar,37-taxon,noscale.25g.500b,MAD,0.155480
 
-astral,37-taxon,1X-50-500,None,0.075000
-stelar,37-taxon,1X-50-500,MP,0.069118
-stelar,37-taxon,1X-50-500,MV,0.070588
-stelar,37-taxon,1X-50-500,MAD,0.150560
+astral,37-taxon,noscale.50g.500b,None,0.075000
+stelar,37-taxon,noscale.50g.500b,MP,0.069118
+stelar,37-taxon,noscale.50g.500b,MV,0.070588
+stelar,37-taxon,noscale.50g.500b,MAD,0.150560
 
-astral,37-taxon,1X-100-500,None,0.070588
-stelar,37-taxon,1X-100-500,MP,0.067647
-stelar,37-taxon,1X-100-500,MV,0.067647
-stelar,37-taxon,1X-100-500,MAD,0.156812
+astral,37-taxon,noscale.100g.500b,None,0.070588
+stelar,37-taxon,noscale.100g.500b,MP,0.067647
+stelar,37-taxon,noscale.100g.500b,MV,0.067647
+stelar,37-taxon,noscale.100g.500b,MAD,0.156812
 
-astral,37-taxon,1X-200-250,None,0.063235
-stelar,37-taxon,1X-200-250,MP,0.061765
-stelar,37-taxon,1X-200-250,MV,0.063235
-stelar,37-taxon,1X-200-250,MAD,0.157157
+astral,37-taxon,noscale.200g.250b,None,0.063235
+stelar,37-taxon,noscale.200g.250b,MP,0.061765
+stelar,37-taxon,noscale.200g.250b,MV,0.063235
+stelar,37-taxon,noscale.200g.250b,MAD,0.157157
 
-astral,37-taxon,1X-200-500,None,0.038235
-stelar,37-taxon,1X-200-500,MP,0.033824
-stelar,37-taxon,1X-200-500,MV,0.035294
-stelar,37-taxon,1X-200-500,MAD,5.334942
-stelar,37-taxon,1X-200-500,RD,0.060294
+astral,37-taxon,noscale.200g.500b,None,0.038235
+stelar,37-taxon,noscale.200g.500b,MP,0.033824
+stelar,37-taxon,noscale.200g.500b,MV,0.035294
+stelar,37-taxon,noscale.200g.500b,MAD,5.334942
 
-astral,37-taxon,1X-200-1000,None,0.022059
-stelar,37-taxon,1X-200-1000,MP,0.026471
-stelar,37-taxon,1X-200-1000,MV,0.026471
-stelar,37-taxon,1X-200-1000,MAD,0.154675
-stelar,37-taxon,1X-200-1000,RD,0.032353
+astral,37-taxon,noscale.200g.1000b,None,0.022059
+stelar,37-taxon,noscale.200g.1000b,MP,0.026471
+stelar,37-taxon,noscale.200g.1000b,MV,0.026471
+stelar,37-taxon,noscale.200g.1000b,MAD,0.154675
 
-astral,37-taxon,1X-200-1500,None,0.017647
-stelar,37-taxon,1X-200-1500,MP,0.019118
-stelar,37-taxon,1X-200-1500,MV,0.022059
-stelar,37-taxon,1X-200-1500,MAD,0.143327
+astral,37-taxon,noscale.200g.1500b,None,0.017647
+stelar,37-taxon,noscale.200g.1500b,MP,0.019118
+stelar,37-taxon,noscale.200g.1500b,MV,0.022059
+stelar,37-taxon,noscale.200g.1500b,MAD,0.143327
 
-astral,37-taxon,1X-200-true,None,0.013235
-stelar,37-taxon,1X-200-true,MP,0.016176
-stelar,37-taxon,1X-200-true,MV,0.014706
-stelar,37-taxon,1X-200-true,MAD,0.131856
+astral,37-taxon,noscale.200g.true,None,0.013235
+stelar,37-taxon,noscale.200g.true,MP,0.016176
+stelar,37-taxon,noscale.200g.true,MV,0.014706
+stelar,37-taxon,noscale.200g.true,MAD,0.131856
 
-astral,37-taxon,1X-400-500,None,0.014706
-stelar,37-taxon,1X-400-500,MP,0.014706
-stelar,37-taxon,1X-400-500,MV,0.014706
-stelar,37-taxon,1X-400-500,MAD,0.139124
+astral,37-taxon,noscale.400g.500b,None,0.014706
+stelar,37-taxon,noscale.400g.500b,MP,0.014706
+stelar,37-taxon,noscale.400g.500b,MV,0.014706
+stelar,37-taxon,noscale.400g.500b,MAD,0.139124
 
-astral,37-taxon,1X-800-500,None,0.007353
-stelar,37-taxon,1X-800-500,MP,0.008824
-stelar,37-taxon,1X-800-500,MV,0.005882
-stelar,37-taxon,1X-800-500,MAD,0.140445
-stelar,37-taxon,1X-800-500,RD,0.032353
+astral,37-taxon,noscale.800g.500b,None,0.007353
+stelar,37-taxon,noscale.800g.500b,MP,0.008824
+stelar,37-taxon,noscale.800g.500b,MV,0.005882
+stelar,37-taxon,noscale.800g.500b,MAD,0.140445
 
-stelar,37-taxon,1X-800-1000,RD,0.022059
+astral,37-taxon,scale2d.200g.500b,None,0.048529
+stelar,37-taxon,scale2d.200g.500b,MP,0.041176
+stelar,37-taxon,scale2d.200g.500b,MV,0.042647
+stelar,37-taxon,scale2d.200g.500b,MAD,0.174962
 
-astral,37-taxon,0.5X-200-500,None,0.048529
-stelar,37-taxon,0.5X-200-500,MP,0.041176
-stelar,37-taxon,0.5X-200-500,MV,0.042647
-stelar,37-taxon,0.5X-200-500,MAD,0.174962
-
-astral,37-taxon,2X-200-500,None,0.025000
-stelar,37-taxon,2X-200-500,MP,0.026471
-stelar,37-taxon,2X-200-500,MV,0.027941
-stelar,37-taxon,2X-200-500,MAD,0.147535
+astral,37-taxon,scale2u.200g.500b,None,0.025000
+stelar,37-taxon,scale2u.200g.500b,MP,0.026471
+stelar,37-taxon,scale2u.200g.500b,MV,0.027941
+stelar,37-taxon,scale2u.200g.500b,MAD,0.147535
 
 astral,48-taxon,0.5X-1000-500,None,0.131111
 stelar,48-taxon,0.5X-1000-500,MP,0.277778
 stelar,48-taxon,0.5X-1000-500,MV,0.328889
 stelar,48-taxon,0.5X-1000-500,MAD,0.334444
-stelar,48-taxon,0.5X-1000-500,RD,0.303333
 
 astral,48-taxon,1X-25-500,None,0.326667
 stelar,48-taxon,1X-25-500,MP,0.443333
@@ -186,4 +178,3 @@ astral,48-taxon,2X-1000-500,None,0.043333
 stelar,48-taxon,2X-1000-500,MP,0.082222
 stelar,48-taxon,2X-1000-500,MV,0.076667
 stelar,48-taxon,2X-1000-500,MAD,0.000000
-stelar,48-taxon,2X-1000-500,RD,0.183333
