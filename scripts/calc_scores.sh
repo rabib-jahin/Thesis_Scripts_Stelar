@@ -3,8 +3,8 @@
 # Local files
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
-folders=( 15-taxon )
-fresh=1
+folders=( 11-taxon 15-taxon 37 taxon 48-taxon)
+
 # Replicates
 R=20
 
