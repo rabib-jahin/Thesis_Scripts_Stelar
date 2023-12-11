@@ -70,13 +70,29 @@ declare -A count_diffs
 mkdir -p ../Dataset/Summary
 rf_csv_main=../Dataset/Summary/average_rfs.csv
 
-printf "%s,%s,%s,%s,%s\n\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_rf" > $rf_csv_main
+printf "%s,%s,%s,%s,%s\n" "summary_method" "folder" "inner_folder" "rooting_method" "average_rf" > $rf_csv_main
 
 
 # NEWW
-rf_scores_file="../Dataset/Summary/rf_scores.csv"
-printf "%s,%s,%s,%s,%s\n" "folder" "inner_folder" "method" "R" "rf-score" > "$rf_scores_file" # Clear the file
-# echo -n "folder, inner-folder, method, R, rf-score" > "$rf_scores_file" # Clear the file
+rf_scores_file="rf_scores.txt"
+echo -n "" > "$rf_scores_file" # Clear the file
+
+# Function to calculate and store RF scores
+calculate_and_store_rf() {
+    folder=$1
+    inner_folder=$2
+    method=$3
+    R=$4
+
+    for ((j2=1; j2<=$R; j2++)); do
+        stelar_output="../Dataset/$folder/$inner_folder/R$j2/stelar_outputs/stelar_output_$method.tre"
+        
+        if [ -f "$stelar_output" ]; then
+            rf=$(python3 ../RF/getFpFn.py -e "$stelar_output" -t "$true_tree" | cut -d',' -f2 | tr -d '()')
+            echo "$folder,$inner_folder,$method,$rf" >> "$rf_scores_file"
+        fi
+    done
+}
 
 # NEWW
 
@@ -170,16 +186,11 @@ do
 				# sum_diffs[$method]=$(echo "${sum_diffs[$method]} + $DIFF" | bc)
 				sum_rfs[$method]=$(echo "${sum_rfs[$method]} + $RFdistance" | bc)
                 ((count_diffs[$method]++))
+				
 
+				calculate_and_store_rf "$folder" "$inner_folder" "$method" "$R"
 				# rm $input_sanitized.log
 				# break
-				stelar_output="../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre"
-        
-				if [ -f "$stelar_output" ]; then
-					rf=$(python3 ../RF/getFpFn.py -e "$stelar_output" -t "$true_tree" | cut -d',' -f2 | tr -d '()')
-					echo "$folder,$inner_folder,$method, $j,$rf" >> "$rf_scores_file"
-				fi
-
 
             done
 			
@@ -213,7 +224,7 @@ do
 	# break
 done
 
-# python3 calculate_stats.py "$rf_scores_file" "rf_average.csv"
+python3 calculate_stats.py "$rf_scores_file" "rf_average.csv"
 
 if [ $bad -eq 1 ];then
     echo "some files missing, incomplete run. Please ckeck stelar_outputs and rerun"
