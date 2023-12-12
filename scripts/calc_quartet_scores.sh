@@ -8,7 +8,7 @@
 # Local files
 
 # Outer folders with taxa numbers: 11-taxon, 15-taxon, 37-taxon, 48-taxon
-folders=( 11-taxon 15-taxon 37 taxon 48-taxon)
+folders=( 11-taxon 15-taxon )
 
 # Replicates
 R=20
@@ -23,8 +23,8 @@ innerFolderNames48=(0.5X-1000-500 1X-25-500 1X-50-500 1X-100-500 1X-200-500 1X-5
 # Rooting Methods MAD, MP, MV, OG, RD, NOCHANGE, RAND
 methodNames=(  MP MV OG RAND )
 
-# Path to your Perl script
-perl_script_path="./get_tree_root.pl"
+# # Path to your Perl script
+# perl_script_path="./get_tree_root.pl"
 
 # Inputs = Unrooted Gene trees, outputs = rooted gene trees to be used as stelar inputs
 
@@ -79,8 +79,11 @@ mkdir -p ../Dataset/Summary
 
 
 # NEWW
-rooting_matches_file="../Dataset/Summary/rooting_matches.csv"
-printf "%s,%s,%s,%s,%s\n" "folder" "inner_folder" "method" "R" "rooting_match" > "$rooting_matches_file" # Clear the file
+# rooting_matches_file="../Dataset/Summary/rooting_matches.csv"
+# printf "%s,%s,%s,%s,%s\n" "folder" "inner_folder" "method" "R" "rooting_match" > "$rooting_matches_file" # Clear the file
+quartet_scores_file="../Dataset/Summary/quartet_scores.csv"
+printf "%s,%s,%s,%s,%s\n" "folder" "inner_folder" "method" "R" "quartet_score" > "$quartet_scores_file" # Clear the file
+
 
 # echo -n "folder, inner-folder, method, R, rf-score" > "$rf_scores_file" # Clear the file
 
@@ -149,29 +152,15 @@ do
                         fi
 				fi
 				# temp_=0
+				
 
 
 				true_tree=../Dataset/$folder/true_tree_trimmed
 				stelar_output="../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre"
-
-				if [ -f "$stelar_output" ]; then
-
-                    if [ -f "$stelar_output" ]; then
-                    stelar_root=$($perl_script_path "$stelar_output")
-                    true_root=$($perl_script_path "$true_tree")
-
-                    # Compare the roots and output the result
-                    if [ "$stelar_root" == "$true_root" ]; then
-                        rooting_match=1
-                    else
-                        rooting_match=0
-                    fi
-
-                    echo "$folder,$inner_folder,$method,$j,$rooting_match" >> "$rooting_matches_file"
-                fi
-				fi
-
-
+				
+				quartet_score=$(python3 get_quartet_score.py "$stelar_output" "$true_tree")
+                echo "$folder,$inner_folder,$method,$j,$quartet_score" >> "$quartet_scores_file"
+                
             done
 			
 
