@@ -1,0 +1,49 @@
+
+================== ASTRAL ===================== 
+
+This is ASTRAL version 5.7.8
+Gene trees are treated as unrooted
+1 trees read from ../Dataset/15-taxon/100gene-100bp/estimated-genetrees/R1/stelar_outputs/stelar_output_OG.tre
+index0
+Scoring ../Dataset/15-taxon/true_tree_trimmed
+Scoring: 1 trees
+Number of taxa: 15 (15 species)
+Taxa: [O, L, M, N, J, K, G, E, F, B, D, C, A, I, H]
+Taxon occupancy: {A=1, B=1, C=1, D=1, E=1, F=1, G=1, H=1, I=1, J=1, K=1, L=1, M=1, N=1, O=1}
+Number of gene trees: 1
+0 trees have missing taxa
+Using tree-based weight calculation.
+Using polytree-based weight calculation.
+Polytree max score: 1365
+Polytree building time: 0.003 seconds.
+Number of quartet trees in the gene trees: 1365
+Final quartet score is: 1183
+Final normalized quartet score is: 0.8666666666666667
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{B, A}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{B, C, A}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{B, D, C, A}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{E, B, D, C, A}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{E, F, B, D, C, A}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{G, E, F, B, D, C, A}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{G, E, F, B, D, C, A, H}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{G, E, F, B, D, C, A, I, H}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{J, G, E, F, B, D, C, A, I, H}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{J, K, G, E, F, B, D, C, A, I, H}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{L, J, K, G, E, F, B, D, C, A, I, H}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 1:
+	{L, M, J, K, G, E, F, B, D, C, A, I, H}
+Extended species tree:
+((((((((((((((A,B)0.17:0.0,C)0.39:0.0,D)0.67:0.2876820724517809,E)0.17:0.0,F)0.67:0.2876820724517809,G)0.67:0.2876820724517809,H)0.17:0.0,I)0.67:0.2876820724517809,J)0.17:0.0,K)0.67:0.2876820724517809,L)0.39:0.0,M)0.17:0.0,N),O);
+Weight calculation took 3.817E-4 secs
+ASTRAL finished in 0.07 secs
