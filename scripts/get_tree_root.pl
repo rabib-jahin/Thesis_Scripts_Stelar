@@ -35,3 +35,6 @@ if (my $tree = $treeio->next_tree) {
 
 # ./get_tree_root.pl ../Dataset/11-taxon/estimated_Xgenes_strongILS/estimated_15genes_strongILS/R1/stelar_outputs/stelar_output_OG.tre
 # ((Human, Chimpanzee), (Gorilla, (Orangutan, Gibbon)))Temp;
+
+# ((Human, Chimpanzee), (Gorilla, (Orangutan, Gibbon)))Temp;
+# (((Human, Chimpanzee), (Gorilla, (Orangutan, Gibbon))), Temp);

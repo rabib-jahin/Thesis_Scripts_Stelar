@@ -157,9 +157,21 @@ do
 
 				true_tree=../Dataset/$folder/true_tree_trimmed
 				stelar_output="../Dataset/$folder/$inner_folder/R$j/stelar_outputs/stelar_output_$method.tre"
-				
-				quartet_score=$(python3 get_quartet_score.py "$stelar_output" "$true_tree")
-                echo "$folder,$inner_folder,$method,$j,$quartet_score" >> "$quartet_scores_file"
+				# #get quartet score in quartet_score
+				# # java -jar astral.5.7.8.jar -q test_data/simulated_14taxon.default.tre -i test_data/simulated_14taxon.gene.tre -o test_data/simulated_scored.tre 2> test_data/simulated_scored.log
+				# quartet_score=$(grep "Quartet score is:" "$astral_log" | awk '{print $4}')
+                # echo "$folder,$inner_folder,$method,$j,$quartet_score" >> "$quartet_scores_file"
+				# java -jar astral.5.7.8.jar -q test_data/simulated_14taxon.default.tre -i test_data/simulated_14taxon.gene.tre -o test_data/simulated_scored.tre 2> test_data/simulated_scored.log
+
+				astral_log="../Dataset/$folder/$inner_folder/R$j/astral_$method.log"
+				java -jar astral.5.7.8.jar -q "$true_tree" -i "$stelar_output" -o /dev/null 2> "$astral_log"
+
+				# Extract quartet score from log
+				quartet_score=$(grep "Final quartet score is:" "$astral_log" | awk '{print $5}')
+				echo "quartet score: $quartet_score"
+				# Write quartet score to file
+				echo "$folder,$inner_folder,$method,$j,$quartet_score" >> "$quartet_scores_file"
+				# rm $astral_log
                 
             done
 			
