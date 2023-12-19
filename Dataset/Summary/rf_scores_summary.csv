@@ -9,13 +9,11 @@ folder,inner_folder,method,mean,std
 11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,stelar-MV,0.14375,0.09314497754632434
 11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,stelar-OG,0.125,0.08111071056538127
 11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,stelar-RAND,0.2875,0.10806309073382718
-11-taxon,estimated_Xgenes_strongILS/estimated_15genes_strongILS,stelar-RD,,
 11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,astral-None,0.1,0.08698154674230742
 11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,stelar-MP,0.09375,0.08954379992642236
 11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,stelar-MV,0.09375,0.08954379992642236
 11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,stelar-OG,0.09375,0.08954379992642236
 11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,stelar-RAND,0.20625,0.14208851022106647
-11-taxon,estimated_Xgenes_strongILS/estimated_25genes_strongILS,stelar-RD,,
 11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,astral-None,0.05625,0.06380222319175505
 11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,stelar-MP,0.05,0.06282808624375431
 11-taxon,estimated_Xgenes_strongILS/estimated_50genes_strongILS,stelar-MV,0.05,0.06282808624375431
@@ -26,7 +24,6 @@ folder,inner_folder,method,mean,std
 11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,stelar-MV,0.3125,0.17443517873109016
 11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,stelar-OG,0.3125,0.1647366319151173
 11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,stelar-RAND,0.3125,0.16473663191511728
-11-taxon,estimated_Xgenes_strongILS/estimated_5genes_strongILS,stelar-RD,,
 15-taxon,1000gene-1000bp/estimated-genetrees,astral-None,0.03333333333333332,0.04303314829119351
 15-taxon,1000gene-1000bp/estimated-genetrees,stelar-MP,0.03333333333333332,0.04303314829119351
 15-taxon,1000gene-1000bp/estimated-genetrees,stelar-MV,0.03333333333333332,0.04303314829119351

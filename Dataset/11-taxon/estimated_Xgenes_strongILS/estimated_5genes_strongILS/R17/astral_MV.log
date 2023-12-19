@@ -37,5 +37,5 @@ You may want to ignore posterior probabilities and other statistics related to t
 	{10, 9, 7, 8, 5, 6}
 Extended species tree:
 (((((1,2)0.67:0.2876820724517809,3)0.67:0.2876820724517809,4)0.67:0.2876820724517809,((((5,6)0.67:0.2876820724517809,(7,8)0.67:0.2876820724517809)0.67:0.2876820724517809,9)0.67:0.2876820724517809,10)0.67:0.2876820724517809),11);
-Weight calculation took 1.626E-4 secs
-ASTRAL finished in 0.059 secs
+Weight calculation took 3.088E-4 secs
+ASTRAL finished in 0.06 secs

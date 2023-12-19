@@ -15,7 +15,7 @@ Number of gene trees: 1
 Using tree-based weight calculation.
 Using polytree-based weight calculation.
 Polytree max score: 330
-Polytree building time: 0.003 seconds.
+Polytree building time: 0.002 seconds.
 Number of quartet trees in the gene trees: 330
 Final quartet score is: 330
 Final normalized quartet score is: 1.0
@@ -37,5 +37,5 @@ You may want to ignore posterior probabilities and other statistics related to t
 	{10, 9, 6, 5, 7, 8}
 Extended species tree:
 (((((1,2)0.67:0.2876820724517809,3)0.67:0.2876820724517809,4)0.67:0.2876820724517809,((((5,6)0.67:0.2876820724517809,(7,8)0.67:0.2876820724517809)0.67:0.2876820724517809,9)0.67:0.2876820724517809,10)0.67:0.2876820724517809),11);
-Weight calculation took 2.238E-4 secs
-ASTRAL finished in 0.063 secs
+Weight calculation took 3.111E-4 secs
+ASTRAL finished in 0.06 secs
